@@ -21,7 +21,7 @@ It’s important to keep in mind who your users are. There are two “user inter
 
 Consistency and commonality is key, particularly in microservice applications where there’s strong independence between teams. Good user interface design has common naming and themes. A poor shopping site experience would alternate between “Add to cart,” “Add to basket,” and “Add to bag.” Similarly, telemetry attributes referring to the same thing should be consistently named across the application. Distributed tracing chains together independently instrumented services making inconsistencies particularly jarring.
 
-**OpenTelemetry’s [Semantic Conventions](https://opentelemetry.io/docs/concepts/semantic-conventions/)** provide a global set of common attributes. 
+**OpenTelemetry’s [Semantic Conventions](https://opentelemetry.io/docs/concepts/semantic-conventions/)** provide a global set of common attributes.
 
 > The benefit of using Semantic Conventions is in following a common naming scheme that can be standardized across a codebase, libraries, and platforms.
 
@@ -29,7 +29,7 @@ This should be your first port of call. However, the vast majority of your instr
 
 ## Namespaces
 
-Our microservice application runs in AWS, so inevitably, we use S3 a lot. An S3 bucket is a common thing and, sure enough, there’s a global Semantic Convention attribute [`aws.s3.bucket`](https://opentelemetry.io/docs/specs/semconv/object-stores/s3/). This seems like an obvious natural name, and it is—but it’s also part of a family of attributes. 
+Our microservice application runs in AWS, so inevitably, we use S3 a lot. An S3 bucket is a common thing and, sure enough, there’s a global Semantic Convention attribute [`aws.s3.bucket`](https://opentelemetry.io/docs/specs/semconv/object-stores/s3/). This seems like an obvious natural name, and it is—but it’s also part of a family of attributes.
 
 The part before `bucket` is the prefix or namespace `aws.s3`. Dot notation is used to provide namespace hierarchy. You’ll find `key` under `aws.s3` and also `aws.dynamodb.index_name` defining an attribute under a branch from the top level `aws` namespace. It’s important to understand the intention of dot notation in attribute names even if you don’t use Semantic Conventions.
 
@@ -66,7 +66,7 @@ So we’ll use the type and make `aws.s3.bucket = some_bucket`. Great! However, 
 
 ## Signal in the noise
 
-Now we know how to name attributes well, but what should we capture? There’s some good guidance in the Observability Engineering book, particularly Chapter 11: 
+Now we know how to name attributes well, but what should we capture? There’s some good guidance in the Observability Engineering book, particularly Chapter 11:
 
 Observability-Driven Development:
 
@@ -74,13 +74,13 @@ Observability-Driven Development:
 
 ![Where's wally in a sea of almost-wallys](/images/semconv/signal.png)
 
-The craft of instrumentation can take a while to master. The game is to provide enough information to help with the _unknown unknowns_ without creating too much noise. A common issue is batch processing: if your code is looping through an unbounded list of items, you should think carefully before creating a span for each iteration. Even a span event may make too much noise and cost too much in storage! 
+The craft of instrumentation can take a while to master. The game is to provide enough information to help with the _unknown unknowns_ without creating too much noise. A common issue is batch processing: if your code is looping through an unbounded list of items, you should think carefully before creating a span for each iteration. Even a span event may make too much noise and cost too much in storage!
 
 Adding [Refinery](https://docs.honeycomb.io/manage-data-volume/refinery/) downstream could be used to sample these out, but if you know it’s going to be noisy, find an alternative. Always emit any errors of course, and include detailed state information. Otherwise, consider a single span for the loop with the number of items, any state information, perhaps even an array-type attribute of the item keys or other significant field. Unfortunately, if you are calling an auto-instrumented library for each member of the list, you will still create spans. (If a reader knows how to programmatically disable tracing in a library in this scenario, please tell me how!)
 
 ## Changes of state
 
-If you’re upping your game with observability-driven development, you will start adding extra code beyond what is passively available at your current scope. For example, your function may create a span with its incoming parameters, passive stuff. If the function makes a change to an in-memory data store, you may want to emit some information about the new state of that store (e.g., sizes, amounts, remaining capacity). Perhaps your code dequeues a task; it may be able to emit the size of that queue. 
+If you’re upping your game with observability-driven development, you will start adding extra code beyond what is passively available at your current scope. For example, your function may create a span with its incoming parameters, passive stuff. If the function makes a change to an in-memory data store, you may want to emit some information about the new state of that store (e.g., sizes, amounts, remaining capacity). Perhaps your code dequeues a task; it may be able to emit the size of that queue.
 
 ![People climbing to heights of greater expertise](/images/semconv/up-game.png)
 
