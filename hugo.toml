@@ -1,4 +1,4 @@
-baseURL = 'https://jerbly.net/'
+baseURL = 'https://blog.jerbly.net/'
 title = 'Jeremy Blythe'
 theme = 'gokarna'
 languageCode = "en"
