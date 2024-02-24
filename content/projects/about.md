@@ -1,7 +1,6 @@
 ---
 title: 'About me'
 type: 'page'
-draft: true
 showTableOfContents: true
 ---
 
