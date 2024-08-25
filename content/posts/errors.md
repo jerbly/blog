@@ -6,6 +6,7 @@ tags: ["observability", "open-telemetry", "semantic-conventions", "honeycomb.io"
 type: post
 weight: 25
 showTableOfContents: true
+image: "/images/errors/error-span.png"
 ---
 
 > ## _How many errors are acceptable?_
