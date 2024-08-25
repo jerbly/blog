@@ -21,6 +21,9 @@ socialIcons = [
 ]
 metaKeywords = ["blog", "jerbly", "observability"]
 showPostsOnHomePage = "recent"
+customHeadHTML = '''
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="2cac60f1-5f06-44eb-bcf6-02ef1669b20c"></script>
+'''
 
 [menu]
 [[menu.main]]
