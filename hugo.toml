@@ -7,51 +7,51 @@ enableEmoji = true
 enableRobotsTXT = true
 
 [params]
-  footer = "Jeremy Blythe"
-  description = ""
-  avatarURL = "/images/JBlythe2.jpg"
-  AvatarAltText = "avatar"
-  avatarSize = "size-m"
-  ShowBackToTopButton = true # true or false for "back to top" button on posts
-  socialIcons = [
-    {name = "linkedin", url = "https://www.linkedin.com/in/jeremyblythe/"},
-    {name = "github", url = "https://github.com/jerbly"},
-    {name = "twitter", url = "https://twitter.com/jerbly"},
-    {name = "email", url = "mailto:jeremyblythe+blog@gmail.com"}
-  ]
-  metaKeywords = ["blog", "jerbly", "observability"]
-
+footer = "Jeremy Blythe"
+description = ""
+avatarURL = "/images/JBlythe2.jpg"
+AvatarAltText = "avatar"
+avatarSize = "size-m"
+ShowBackToTopButton = true # true or false for "back to top" button on posts
+socialIcons = [
+  { name = "linkedin", url = "https://www.linkedin.com/in/jeremyblythe/" },
+  { name = "github", url = "https://github.com/jerbly" },
+  { name = "twitter", url = "https://twitter.com/jerbly" },
+  { name = "email", url = "mailto:jeremyblythe+blog@gmail.com" },
+]
+metaKeywords = ["blog", "jerbly", "observability"]
+showPostsOnHomePage = "recent"
 
 [menu]
-  [[menu.main]]
-    name = "Home"
-    pre = "<span data-feather='home'></span>"
-    url = "/"
-    weight = 1
+[[menu.main]]
+name = "Home"
+pre = "<span data-feather='home'></span>"
+url = "/"
+weight = 1
 
-  [[menu.main]]
-    name = "Posts"
-    pre = "<span data-feather='file-text'></span>"
-    url = "/posts/"
-    weight = 2
-    
-  [[menu.main]]
-    name = "Tags"
-    pre = "<span data-feather='tag'></span>"
-    url = "/tags/"
-    weight = 3
+[[menu.main]]
+name = "Posts"
+pre = "<span data-feather='file-text'></span>"
+url = "/posts/"
+weight = 2
 
-  [[menu.main]]
-    name = "Code"
-    identifier = "github"
-    url = "https://github.com/jerbly"
-    weight = 4
-    
-    # We use feather-icons: https://feathericons.com/
-    pre = "<span data-feather='github'></span>"
+[[menu.main]]
+name = "Tags"
+pre = "<span data-feather='tag'></span>"
+url = "/tags/"
+weight = 3
 
-  [[menu.main]]
-    name = "About"
-    pre = "<span data-feather='help-circle'></span>"
-    url = "/projects/about/"
-    weight = 5
+[[menu.main]]
+name = "Code"
+identifier = "github"
+url = "https://github.com/jerbly"
+weight = 4
+
+# We use feather-icons: https://feathericons.com/
+pre = "<span data-feather='github'></span>"
+
+[[menu.main]]
+name = "About"
+pre = "<span data-feather='help-circle'></span>"
+url = "/projects/about/"
+weight = 5
