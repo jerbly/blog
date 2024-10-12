@@ -7,6 +7,8 @@ type: post
 weight: 20
 showTableOfContents: true
 ---
+**NOTE:** _This post was dual published to the Honeycomb blog [here](https://www.honeycomb.io/blog/effective-trace-instrumentation-semantic-conventions)_
+
 ![A dashboard of telemetry](/images/semconv/intro.png)
 
 There’s plenty of literature on the mechanics of instrumenting code with OpenTelemetry and delivering it to Honeycomb. However, I’ve not found many guides on the craft of instrumenting code in order to have a good observability experience in your system. A lot of focus is placed on [automatic instrumentation](https://www.honeycomb.io/blog/what-is-auto-instrumentation)—which is great, particularly if you’re new to observability or retrofitting—but it misses the power of good instrumentation at the application level.
