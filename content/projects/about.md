@@ -24,11 +24,17 @@ Technology and Engineering Emmy Award: Pioneering Public Cloud Based Linear Medi
 
 ## Publications elsewhere
 
+### mabl.com
+
+[Observability for low-code tests](https://www.mabl.com/blog/observability-for-low-code-tests)
+
+![mabl linked-in post](/images/li-mabl.png)
+
 ### Honeycomb.io
 
 [Effective Trace Instrumentation with Semantic Conventions](https://www.honeycomb.io/blog/effective-trace-instrumentation-semantic-conventions)
 
-This started as a presentation to my engineering team on Semantic Conventions. I transformed it into an article to provide guidance and introduce tools to help improve attribute naming in OpenTelemetry tracing. The tools I've written: [honey-health](https://github.com/jerbly/honey-health) and [honey-explore](https://github.com/jerbly/honey-explore), correlate Semantic Convention definitions with Honeycomb datasets to provide useful insights.
+![Honeycomb linked-in post](/images/li-honeycomb.png)
 
 ### AWS
 
@@ -36,11 +42,15 @@ This started as a presentation to my engineering team on Semantic Conventions. I
 
 A co-written piece introducing the evertz.io SaaS. My section is "Evertz.io engineering" towards the end of the article where I present a few of our guiding principles, including: Serverless-first; High performance teams; and Observability-driven development.
 
+![AWS linked-in post](/images/li-aws.png)
+
 ### evertz.io
 
 [Video Observability](https://evertz.io/blog/2022-09-22-video-observability)
 
 A piece to explain the scalability challenges of traditional monitoring for broadcasters and to showcase our Machine Monitoring by Assertion (MMBA) system to easily handle this. I was awarded a US patent for MMBA in 2024.  
+
+![evertz.io linked-in post](/images/li-eio.png)
 
 ### Adafruit
 
